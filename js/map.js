@@ -1,8 +1,8 @@
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 13.7248936, lng: 100.4930262 },
-    zoom: 15,
+    center: { lat: 13.724713, lng: 100.633111 },
+    zoom: 10,
     styles: [
 
   {
@@ -17,7 +17,7 @@ function initMap() {
     disableDefaultUI: true,
     zoomControl: true
   });
-
+  
   var input = document.getElementById('searchInput');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -81,6 +81,7 @@ function initMap() {
         document.getElementById('lat').innerHTML = place.geometry.location.lat();
         document.getElementById('lon').innerHTML = place.geometry.location.lng();
     });
+   
 }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {

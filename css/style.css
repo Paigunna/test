@@ -132,7 +132,7 @@ body {
     height: 400px;
 }
 .controls {
-    margin-top: 2.7%;
+    margin-top: 4.7%;
     margin-left: 43%;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
@@ -155,31 +155,60 @@ body {
 #searchInput:focus {
     border-color: #4d90fe;
 }
-/*------------------------------------*/
 
-.btn-group button {
-  
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */ 
-  
+/*toggle switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
   content: "";
-  clear: both;
-  display: table;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+input:checked + .slider {
+  background-color: #2196F3;
 }
 
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #3e8e41;
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
